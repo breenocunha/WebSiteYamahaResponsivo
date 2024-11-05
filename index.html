@@ -10,13 +10,19 @@
     <section class="main">
         <header>
             <a href="#"><img src="assets/images/LogoYamahaBlue.png" alt="" class="logo"></a>
-            <div class="toggle"></div>
-            <ul class="navigation">
-                <li><a href="#">Principais Características</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Loja</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
+            <div class="group">
+                <div class="toggle"></div>
+                <ul class="navigation">
+                    <li><a href="#">Principais Características</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">Loja</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                <div class="dayNight">
+                    <ion-icon name="sunny-outline" class="active"></ion-icon>
+                    <ion-icon name="moon-outline"></ion-icon>
+                </div>
+            </div>
         </header>
         <div class="content">
             <h2>Pronto Para <span>Correr</span></h2>
@@ -59,6 +65,14 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script>
+
+        const dayNight = document.querySelector('.dayNight');
+        const body = document.querySelector('body');
+        dayNight.onclick = function(){
+            dayNight.classList.toggle('active');
+            body.classList.toggle('light');
+        }
+
 
         const toggle = document.querySelector('.toggle');
         const navigation = document.querySelector('.navigation');

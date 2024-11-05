@@ -11,6 +11,11 @@
     --white: #fff;
     --blue: #0B67B0;
 }
+.light {
+    --black: #fff;
+    --white: #2f2f2f;
+    --blue: #0B67B0;
+}
 .main {
     position: relative;
     min-height: 100vh;
@@ -21,6 +26,9 @@
     align-items: center;
     flex-direction: column;
 }
+.light .main {
+    background: #fff;
+}
 .main::before {
     content: 'Adventure';
     position: absolute;
@@ -30,6 +38,9 @@
     font-size: 15vw;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.05);
+}
+.light .main::before {
+    color: rgba(0, 0, 0, 0.05);
 }
 header {
     position: absolute;
@@ -44,6 +55,7 @@ header {
 .logo {
     max-width: 80px;
 }
+
 .navigation {
     display: flex;
 }
@@ -89,6 +101,9 @@ header {
     font-size: 1.25em;
     transition: 0.25s;
 }
+.light .btn {
+    color: #fff;
+}
 .btn:hover {
     letter-spacing: 4px;
 }
@@ -130,6 +145,9 @@ header {
     cursor: pointer;
     margin-left: 10px;
 }
+.light .dots .dot {
+    background: rgba(0, 0, 0, 0.2);
+}
 .dots .dot.active {
     background: var(--white);
 }
@@ -163,6 +181,38 @@ header {
     font-size: 0.5em;
     font-weight: 400;
     font-style: italic;
+}
+
+
+.group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.group .dayNight {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    cursor: pointer;
+}
+.group .dayNight ion-icon {
+    position: absolute;
+    font-size: 1.5em;
+    display: none;
+}
+.group .dayNight ion-icon:nth-child(1),
+.group .dayNight.active ion-icon:nth-child(2) {
+    display: block;
+
+}
+.group .dayNight ion-icon:nth-child(2),
+.group .dayNight.active ion-icon:nth-child(1) {
+    display: none;
+
 }
 
 
@@ -208,6 +258,65 @@ header {
     }
     .content h2 {
         font-size: 3em;
+    }
+    
+}
+
+
+
+
+
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 70px;
+    }
+    header {
+        padding: 15px 50px;
+    }
+    .main {
+        padding: 20px;
+    }
+    header {
+        padding: 10px 20px;
+    }
+    .content h2 {
+        font-size: 1.8em;
+    }
+    .btn {
+        padding: 8px 18px;
+        margin-top: 10px;
+        border-radius: 50px;
+        font-size: 1.25em;
+        transition: 0.25s;
+    }
+    .slider {
+        position: relative;
+        width: 100%;
+    }
+    .slider .slides {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .slider .slides h2 {
+        font-size: 1.6em;
+        text-align: center;
+    }
+    .slider .slides h2:last-child {
+        text-align: center;
+    }
+    .footer {
+        position: relative;
+        margin-top: 0;
+        flex-direction: row;
+        padding: 0 10px;
+    }
+    .sci {
+        margin-top: 0;
     }
     .toggle {
         position: relative;
@@ -265,5 +374,16 @@ header {
         flex-direction: column;
         z-index: 999;
         background: var(--black);
+    }
+    .navigation li a {
+        font-size: 1.5em;
+        margin: 10px 0;
+        display: inline-block;
+    }
+    .group {
+        flex-direction: row-reverse;
+    }
+    .group .dayNight {
+        margin-right: 10px;
     }
 }
